@@ -6,7 +6,7 @@ ARG CADDY_RELEASE=https://github.com/caddyserver/caddy/releases/download/v2.11.1
 WORKDIR /extract/caddy
 RUN curl --silent --show-error --location --output caddy.tar.gz \
   "${CADDY_RELEASE}" \
-  && unzip caddy.tar.gz
+  && tar xf caddy.tar.gz
 
 FROM scratch
 ARG CADDY_VERSION
