@@ -1,7 +1,7 @@
 FROM archlinux:base-devel-20260308.0.497099 AS builder
 
 ARG CADDY_VERSION
-ARG CADDY_RELEASE=https://github.com/caddyserver/caddy/releases/download/v2.11.1/caddy_${CADDY_VERSION}_linux_amd64.tar.gz
+ARG CADDY_RELEASE=https://github.com/caddyserver/caddy/releases/download/v${CADDY_VERSION}/caddy_${CADDY_VERSION}_linux_amd64.tar.gz
 
 WORKDIR /extract/caddy
 RUN curl --silent --show-error --location --output caddy.tar.gz \
