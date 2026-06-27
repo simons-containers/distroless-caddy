@@ -1,6 +1,6 @@
-![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-caddy/latest_tag?ignore=latest,sha256*&label=latest)  
+[![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-caddy/latest_tag?ignore=latest,sha256*&label=latest)  
 ![Size](https://ghcr-badge.egpl.dev/simons-containers/distroless-caddy/size?tag=latest)  
-![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-caddy/tags?ignore=latest,sha256*)  
+![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-caddy/tags?ignore=latest,sha256*)](https://github.com/simons-containers/distroless-caddy/pkgs/container/distroless-caddy)
 
 # Distroless Caddy container
 
