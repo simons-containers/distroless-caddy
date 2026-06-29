@@ -5,7 +5,7 @@
     "release": {
       "url_pattern": "https://go.dev/dl/go{version}.linux-amd64.tar.gz"
     }
-  },  
+  },
   "caddy": {
     "version": "2.11.4",
     "purl": "pkg:generic/caddy",
