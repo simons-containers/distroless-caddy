@@ -1,17 +1,35 @@
 FROM archlinux:base-devel-20260308.0.497099 AS builder
 
 ARG CADDY_VERSION
-ARG CADDY_RELEASE
+ARG GOLANG_VERSION
 
-WORKDIR /extract/caddy
-RUN curl --silent --show-error --location --output caddy.tar.gz \
-  "${CADDY_RELEASE}" \
-  && tar xf caddy.tar.gz
+ARG CADDY_SOURCE
+ARG GOLANG_RELEASE
 
-FROM scratch
+RUN pacman -Sy --noconfirm git
+
+WORKDIR /opt/go
+RUN curl --silent --show-error --location \
+  "${GOLANG_RELEASE}" \
+  | tar xzf - --strip-components=1
+ENV PATH=$PATH:/opt/go/bin
+
+WORKDIR /src/caddy
+RUN git clone --branch v${CADDY_VERSION} --depth 1 --single-branch \
+  ${CADDY_SOURCE} .
+
+ENV CGO_ENABLED=0
+RUN go build \
+    -trimpath \
+    -buildmode=pie \
+    -ldflags="-s -w" \
+    -o caddy \
+    ./cmd/caddy
+
+FROM ghcr.io/simons-containers/distroless-glibc:2.43
 ARG CADDY_VERSION
 
-COPY --from=builder /extract/caddy/caddy /usr/bin/caddy
+COPY --from=builder /src/caddy/caddy /usr/bin/caddy
 
 WORKDIR /var/lib/caddy
 ENV HOME=/var/lib/caddy
