@@ -1,0 +1,9 @@
+{
+  "busybox": {
+    "version": "2.11.4",
+    "purl": "pkg:generic/caddy",
+    "source": {
+      "url_pattern": "https://github.com/caddyserver/caddy/releases/download/v{version}/caddy_{version}_linux_amd64.tar.gz"
+    }
+  }
+}
