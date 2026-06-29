@@ -34,7 +34,7 @@ jobs:
 
             jq \
               --arg golang "$GOLANG" \
-              --arg caddy  "$AUTHELIA" \
+              --arg caddy  "$CADDY" \
               '
                 .golang.version = $golang |
                 .caddy.version  = $caddy
