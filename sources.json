@@ -6,11 +6,11 @@
       "url_pattern": "https://go.dev/dl/go{version}.linux-amd64.tar.gz"
     }
   },  
-  "busybox": {
+  "caddy": {
     "version": "2.11.4",
     "purl": "pkg:generic/caddy",
     "source": {
-      "url_pattern": "https://github.com/caddyserver/caddy/releases/download/v{version}/caddy_{version}_linux_amd64.tar.gz"
+      "url_pattern": "https://github.com/caddyserver/caddy.git/"
     }
   }
 }
