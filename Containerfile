@@ -26,7 +26,7 @@ RUN go build \
     -o caddy \
     ./cmd/caddy
 
-FROM ghcr.io/simons-containers/distroless-glibc:2.43
+FROM ghcr.io/simons-containers/distroless-glibc:2.44
 ARG CADDY_VERSION
 
 COPY --from=builder /src/caddy/caddy /usr/bin/caddy
