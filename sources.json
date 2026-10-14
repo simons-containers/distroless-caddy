@@ -1,13 +1,13 @@
 {
   "golang": {
-    "version": "1.27.1",
+    "version": "1.27.2",
     "purl": "pkg:generic/golang",
     "release": {
       "url_pattern": "https://go.dev/dl/go{version}.linux-amd64.tar.gz"
     }
   },
   "caddy": {
-    "version": "2.11.4",
+    "version": "2.11.7",
     "purl": "pkg:generic/caddy",
     "source": {
       "url_pattern": "https://github.com/caddyserver/caddy.git/"
